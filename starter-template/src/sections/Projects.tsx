@@ -1,6 +1,8 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import Image from "next/image";
+import { div } from "framer-motion/client";
 
 const portfolioProjects = [
   {
@@ -42,5 +44,48 @@ const portfolioProjects = [
 ];
 
 export const ProjectsSection = () => {
-  return <div>Projects Section</div>;
+  return <div>
+    <div className="container">
+      <div className="flex justify-center">
+      <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400
+         bg-clip-text text-transparent">
+        Real-World-Results
+        </p>
+        </div>
+      <h2 className="font-serif text-3xl text-centr mt-6">Featured Projects</h2>
+      <p className="text-center text-white/60 mt-4">
+        See How I transformed concepts into engaging digita expereinces
+        </p>
+    
+    <div className="flex flex-col mt-10">
+      {portfolioProjects.map(project=>(
+        <div key={project.title} className="bg-gray-800 rounded-3xl relative z-0 
+        overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 
+        after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl
+        after:outline-white/20
+        ">
+          <div className="flex">
+            <div className="bg-gradient-to-r 
+            from-emerald-300 to-sky-400 inline-flex font-bold uppercase tracking-widest text-sm">
+              <span>{project.company}</span>
+              <span>&bull;</span>
+               <span>{project.year}</span>
+               </div>
+          </div>
+          <h3>{project.title}</h3>
+          <hr />
+          <ul>
+            {project.results.map((result)=>(
+              <li>{result.title}</li>
+            ))}
+          </ul>
+          <a href="{project.link}">
+          <button>View Live Site</button>
+          </a>
+          <Image src={project.image} alt ={project.title} />
+          </div>
+      ))}
+    </div>
+  </div>;
+  </div>
 };

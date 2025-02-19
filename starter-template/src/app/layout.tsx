@@ -29,8 +29,8 @@ export default function RootLayout(
   return (
     <html lang="en">
       <body className={twMerge (
-        forum.variable, 
-        josefin.variable,
+        forum.className, 
+        josefin.className,
         "text-white antialiased font-sans"
         )} 
         >
