@@ -3,7 +3,7 @@ import grainImage from '@/assets/images/grain.jpg';
 
 export const ContactSection = () => {
   return( 
-  <div className='pyl-16 pt-12 lg:py-24
+  <div className='py-16 pt-12 lg:py-24
   lg:pt-20'>
     <div className='container'>
       <div className='bg-gradient-to-r from-emerald-300 to-sky-400 
